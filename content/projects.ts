@@ -19,7 +19,7 @@ export const projects: Project[] = [
     description:
       "100% static Next.js site built to outrank competitors in local São Paulo search. JSON-LD schema, Tailwind v4, 6 service pages with unique copy, sitemap generation, and Core Web Vitals focus.",
     tags: ["Next.js", "TypeScript", "Tailwind v4", "SEO", "SSG", "Schema.org"],
-    live: "https://stellasobral.com.br",
+    live: "https://stellasobralfisioterapia.com.br",
     github: "https://github.com/Ericckm/Stellafisio",
     featured: true,
     year: 2026,
