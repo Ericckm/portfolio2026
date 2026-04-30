@@ -1,4 +1,5 @@
 import Reveal from "@/components/Reveal";
+import GlowCard from "@/components/GlowCard";
 
 type Tech = { name: string; level: number };
 type Category = { label: string; items: Tech[] };
@@ -72,7 +73,7 @@ export default function Stack() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {stack.map((cat, ci) => (
             <Reveal key={cat.label} delay={ci * 100}>
-              <div className="p-6 rounded-2xl border border-border bg-bg hover:border-amber/20 transition-colors duration-300">
+              <GlowCard bg="bg-bg" className="p-6 transition-colors duration-300">
                 <p className="font-mono text-[10px] text-amber tracking-widest uppercase mb-5">
                   {cat.label}
                 </p>
@@ -89,7 +90,7 @@ export default function Stack() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </GlowCard>
             </Reveal>
           ))}
         </div>
