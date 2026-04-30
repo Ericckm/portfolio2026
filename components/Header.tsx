@@ -36,7 +36,7 @@ export default function Header() {
           aria-label="Erick Martins — Home"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
-          <Image src="/logo_transparente.png" alt="EM logo" width={44} height={32} style={{ width: "auto", height: "32px" }} priority />
+          <Image src="/logo_transparente.png" alt="EM logo" width={44} height={32} style={{ width: "auto" }} priority />
         </Link>
 
         {/* Desktop nav */}

@@ -50,6 +50,7 @@ export default function Work() {
                         alt={project.title}
                         width={192}
                         height={112}
+                        sizes="(max-width: 768px) 100vw, 192px"
                         className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
                       />
                     </div>
