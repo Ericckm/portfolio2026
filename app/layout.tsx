@@ -50,7 +50,7 @@ export const metadata: Metadata = {
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
       { url: "/favicon.ico" },
     ],
-    apple: "/logo_transparente.png",
+    apple: "/logo_nobg.png",
   },
   openGraph: {
     type: "website",

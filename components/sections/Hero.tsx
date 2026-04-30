@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 const TITLES = [
   "Full Stack Developer",
@@ -144,13 +145,26 @@ export default function Hero() {
 
         {/* Right — profile photo */}
         <div className="hero-visual hidden lg:flex items-center justify-center">
-          <div className="relative">
-            <div
+          <motion.div
+            className="relative"
+            initial={{ opacity: 0, scale: 0.85 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
+          >
+            {/* Ambient glow ring */}
+            <motion.div
               className="absolute inset-0 rounded-full pointer-events-none"
               style={{ background: "radial-gradient(circle, rgba(232,197,71,0.15) 0%, transparent 70%)", transform: "scale(1.2)" }}
+              animate={{ opacity: [0.6, 1, 0.6] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               aria-hidden="true"
             />
-            <div className="relative z-10 rounded-full overflow-hidden border-2 border-amber/40 drop-shadow-2xl">
+            {/* Floating idle */}
+            <motion.div
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              className="relative z-10 rounded-full overflow-hidden border-2 border-amber/40 drop-shadow-2xl"
+            >
               <Image
                 src="/erick.png"
                 alt="Erick Martins"
@@ -158,8 +172,8 @@ export default function Hero() {
                 height={460}
                 priority
               />
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
 
