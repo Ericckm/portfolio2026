@@ -7,11 +7,11 @@ const stack: Category[] = [
   {
     label: "Frontend",
     items: [
+      { name: "TypeScript", level: 4 },
       { name: "React", level: 5 },
       { name: "Next.js", level: 5 },
-      { name: "TypeScript", level: 4 },
+      { name: "Redux Toolkit", level: 4 },
       { name: "Tailwind CSS", level: 5 },
-      { name: "Framer Motion", level: 3 },
     ],
   },
   {
@@ -20,7 +20,7 @@ const stack: Category[] = [
       { name: "Node.js", level: 4 },
       { name: "Express", level: 4 },
       { name: "MongoDB", level: 3 },
-      { name: "REST APIs", level: 4 },
+      { name: "REST APIs", level: 5 },
       { name: "Zod", level: 4 },
     ],
   },
@@ -28,10 +28,10 @@ const stack: Category[] = [
     label: "Tooling & DevOps",
     items: [
       { name: "Git / GitHub", level: 5 },
-      { name: "Vercel", level: 4 },
-      { name: "VS Code / Claude Code", level: 5 },
-      { name: "AI / LLM Tooling", level: 4 },
-      { name: "Postman", level: 4 },
+      { name: "Docker", level: 3 },
+      { name: "GitHub Actions", level: 3 },
+      { name: "AWS", level: 3 },
+      { name: "Jest / Testing", level: 3 },
     ],
   },
 ];

@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const TITLES = [
@@ -141,27 +142,22 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right — hero video */}
+        {/* Right — profile photo */}
         <div className="hero-visual hidden lg:flex items-center justify-center">
-          <div className="relative w-full rounded-2xl overflow-hidden bg-surface border border-border/60 p-3"
-            style={{ boxShadow: "0 0 60px rgba(232,197,71,0.06), 0 8px 40px rgba(0,0,0,0.4)" }}
-          >
-            <div className="relative w-full aspect-video rounded-xl overflow-hidden">
-              <div
-                className="absolute inset-0 rounded-xl z-10 pointer-events-none"
-                style={{ boxShadow: "inset 0 0 40px rgba(0,0,0,0.3)" }}
-                aria-hidden="true"
+          <div className="relative">
+            <div
+              className="absolute inset-0 rounded-full pointer-events-none"
+              style={{ background: "radial-gradient(circle, rgba(232,197,71,0.15) 0%, transparent 70%)", transform: "scale(1.2)" }}
+              aria-hidden="true"
+            />
+            <div className="relative z-10 rounded-full overflow-hidden border-2 border-amber/40 drop-shadow-2xl">
+              <Image
+                src="/erick.png"
+                alt="Erick Martins"
+                width={460}
+                height={460}
+                priority
               />
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full h-full object-cover"
-                aria-hidden="true"
-              >
-                <source src="/hero-loop.mp4" type="video/mp4" />
-              </video>
             </div>
           </div>
         </div>

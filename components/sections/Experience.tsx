@@ -27,6 +27,11 @@ const education = [
     school: "Universidade Paulista (UNIP)",
     period: "2012 — 2018",
   },
+  {
+    degree: "English Advanced",
+    school: "Sydney, Australia",
+    period: "2014",
+  },
 ];
 
 export default function Experience() {
