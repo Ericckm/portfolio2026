@@ -31,7 +31,7 @@ export const projects: Project[] = [
     description:
       "Personal portfolio built with Next.js 16, Tailwind v4, Framer Motion and TypeScript. Dark editorial aesthetic with Syne typography, amber accent, and animated orbit hero.",
     tags: ["Next.js", "TypeScript", "Tailwind v4", "Framer Motion", "EmailJS"],
-    github: "https://github.com/Ericckm",
+    github: "https://github.com/Ericckm/portfolio2026",
     image: "/work/portfolio/preview.png",
     featured: true,
     year: 2026,
