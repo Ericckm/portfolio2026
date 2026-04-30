@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import { projects } from "@/content/projects";
+import GlowCard from "@/components/GlowCard";
 
 export default function Work() {
   return (
@@ -35,13 +36,7 @@ export default function Work() {
         <div className="flex flex-col gap-6">
           {projects.map((project, i) => (
             <Reveal key={project.slug} delay={i * 100}>
-              <article className="group relative p-7 md:p-9 rounded-2xl border border-border bg-surface hover:border-amber/30 transition-all duration-300 hover:bg-surface-2">
-                {/* Ambient hover glow */}
-                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                  style={{ background: "radial-gradient(ellipse at top left, rgba(232,197,71,0.04) 0%, transparent 60%)" }}
-                  aria-hidden="true"
-                />
-
+              <GlowCard className="group p-7 md:p-9 hover:bg-surface-2 transition-colors duration-300">
                 <div className="relative flex flex-col md:flex-row md:items-start justify-between gap-6">
                   {project.image && (
                     <div className="shrink-0 w-full md:w-48 h-28 rounded-xl overflow-hidden border border-border">
@@ -108,7 +103,7 @@ export default function Work() {
                     )}
                   </div>
                 </div>
-              </article>
+              </GlowCard>
             </Reveal>
           ))}
         </div>
