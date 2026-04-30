@@ -1,4 +1,5 @@
 import Reveal from "@/components/Reveal";
+import GlowCard from "@/components/GlowCard";
 
 const experiences = [
   {
@@ -114,16 +115,17 @@ export default function Experience() {
               </p>
               <div className="flex flex-col gap-6">
                 {education.map((edu) => (
-                  <div
+                  <GlowCard
                     key={edu.degree}
-                    className="p-5 rounded-xl border border-border bg-surface"
+                    rounded="rounded-xl"
+                    className="p-5"
                   >
                     <p className="font-mono text-xs text-muted mb-1">{edu.period}</p>
                     <p className="font-display font-600 text-sm text-text mb-1">
                       {edu.degree}
                     </p>
                     <p className="font-body text-xs text-muted">{edu.school}</p>
-                  </div>
+                  </GlowCard>
                 ))}
 
                 {/* Location signal */}
