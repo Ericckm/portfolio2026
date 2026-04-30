@@ -27,7 +27,7 @@ const jbMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://erickmartins.dev"),
   title: {
-    default: "Erick Martins — Full Stack Developer | React & Next.js",
+    default: "Erick Martins — Full Stack Developer | Typescript & Next.js",
     template: "%s | Erick Martins",
   },
   description:
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://erickmartins.dev",
     siteName: "Erick Martins — Full Stack Developer",
-    title: "Erick Martins — Full Stack Developer | React & Next.js",
+    title: "Erick Martins — Full Stack Developer | Typescript & Next.js",
     description:
       "Full Stack Developer building fast, accessible web applications. Open to remote opportunities.",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "Erick Martins — Full Stack Developer" }],
