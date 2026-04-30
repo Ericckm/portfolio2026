@@ -1,26 +1,132 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/* ─── Font tokens ─── */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-syne);
+  --font-body: var(--font-dm-sans);
+  --font-mono: var(--font-jb-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ─── Design tokens ─── */
+@theme {
+  --color-bg:         #080810;
+  --color-surface:    #111118;
+  --color-surface-2:  #1C1C28;
+  --color-border:     #2E2E40;
+  --color-amber:      #E8C547;
+  --color-amber-dim:  rgba(232, 197, 71, 0.12);
+  --color-amber-glow: rgba(232, 197, 71, 0.06);
+  --color-text:       #EEEAE0;
+  --color-muted:      #7A7D92;
+  --color-faint:      #44475A;
 }
+
+/* ─── Base ─── */
+:root { color-scheme: dark; }
+
+html { scroll-behavior: smooth; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #080810;
+  color: #EEEAE0;
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Selection ─── */
+::selection {
+  background: rgba(232, 197, 71, 0.25);
+  color: #EEEAE0;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #080810; }
+::-webkit-scrollbar-thumb { background: #2E2E40; border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: #E8C547; }
+
+/* ─── Grain texture ─── */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+}
+
+/* ─── Scroll reveal ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-left.is-visible { opacity: 1; transform: translateX(0); }
+
+/* ─── Stagger delays ─── */
+.stagger-1 { transition-delay: 0ms; }
+.stagger-2 { transition-delay: 80ms; }
+.stagger-3 { transition-delay: 160ms; }
+.stagger-4 { transition-delay: 240ms; }
+.stagger-5 { transition-delay: 320ms; }
+.stagger-6 { transition-delay: 400ms; }
+
+/* ─── Hero animations ─── */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(var(--orbit-r)) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(var(--orbit-r)) rotate(-360deg); }
+}
+@keyframes orbit-reverse {
+  from { transform: rotate(360deg) translateX(var(--orbit-r)) rotate(-360deg); }
+  to   { transform: rotate(0deg) translateX(var(--orbit-r)) rotate(0deg); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+@keyframes pulse-ring {
+  0%   { transform: scale(1);   opacity: 0.4; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+.hero-label  { animation: fade-up 0.8s cubic-bezier(0.16,1,0.3,1) 0.1s both; }
+.hero-name   { animation: fade-up 0.8s cubic-bezier(0.16,1,0.3,1) 0.22s both; }
+.hero-title  { animation: fade-up 0.8s cubic-bezier(0.16,1,0.3,1) 0.34s both; }
+.hero-bio    { animation: fade-up 0.8s cubic-bezier(0.16,1,0.3,1) 0.46s both; }
+.hero-cta    { animation: fade-up 0.8s cubic-bezier(0.16,1,0.3,1) 0.58s both; }
+.hero-visual { animation: fade-in 1.2s cubic-bezier(0.16,1,0.3,1) 0.4s both; }
+
+.cursor-blink { animation: blink 1s step-end infinite; }
+
+/* ─── Ambient grid ─── */
+.ambient-grid {
+  background-image:
+    linear-gradient(rgba(232,197,71,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(232,197,71,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
 }
