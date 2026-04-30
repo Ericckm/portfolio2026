@@ -51,7 +51,7 @@ export default function Header() {
             </a>
           ))}
           <a
-            href="/cv/Erick_Martins.pdf"
+            href="/cv/Erick_Martins_CV.pdf"
             download
             className="font-body text-xs font-500 text-bg bg-amber hover:bg-amber/90 px-4 py-2 rounded-full transition-colors duration-200"
           >
@@ -95,7 +95,7 @@ export default function Header() {
               </a>
             ))}
             <a
-              href="/cv/Erick_Martins_Baptista.pdf"
+              href="/cv/Erick_Martins_CV.pdf"
               download
               className="font-body text-sm font-500 text-bg bg-amber px-5 py-2.5 rounded-full text-center mt-2"
             >
