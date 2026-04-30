@@ -19,6 +19,15 @@ const experiences = [
       "Led front-end modernization of a large-scale product catalog portal used by resellers nationwide for one of Brazil's largest toy importers. Migrated legacy jQuery interfaces to React and Next.js, restructured data schemas for advanced filtering and searchability, and collaborated across teams on sprint planning and feature delivery. Mentored junior developers on React patterns and code review practices.",
     stack: ["React.js", "Next.js", "TypeScript", "JavaScript", "jQuery", "HTML", "CSS", "REST APIs", "Git"],
   },
+  {
+    role: "Network & Infrastructure Specialist",
+    company: "AMR Consultoria Ltda.",
+    period: "2016 — 2022",
+    location: "São Paulo, BR",
+    description:
+      "Managed end-to-end data center infrastructure projects for public and private sector clients, covering pre-sales through delivery and post-sales support. Led client acquisition, technical scoping, and proposal writing for network and server solutions.",
+    stack: ["Salesforce (SFDC)", "Network Infrastructure", "Server Infrastructure"],
+  },
 ];
 
 const education = [
